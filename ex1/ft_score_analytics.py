@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 Docstring for ex1.ft_score_analytics
 This Module contains the function to analyze player scores
@@ -44,5 +42,4 @@ def ft_score_analytics() -> None:
         print(f"Score range: {max_score - min_score}")
 
 
-if __name__ == "__main__":
-    ft_score_analytics()
+ft_score_analytics()

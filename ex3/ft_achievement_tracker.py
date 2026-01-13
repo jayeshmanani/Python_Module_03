@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 Docstring for ex3.ft_achievement_tracker
 This Module contains the usage of sets
@@ -101,5 +99,4 @@ def ft_achievement_tracker() -> None:
     print(f"Bob unique: {pl.players['bob'].difference(pl.players['alice'])}")
 
 
-if __name__ == "__main__":
-    ft_achievement_tracker()
+ft_achievement_tracker()

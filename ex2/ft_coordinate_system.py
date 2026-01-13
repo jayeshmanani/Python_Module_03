@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 Docstring for ex2.ft_coordinate_system
 This Module contains the function to create and manipulate 3D coordinates
@@ -72,5 +70,4 @@ def ft_coordinate_system() -> None:
         print(f"Coordinates: X={x}, Y={y}, Z={z}")
 
 
-if __name__ == "__main__":
-    ft_coordinate_system()
+ft_coordinate_system()

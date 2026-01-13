@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 Docstring for ex0.ft_command_quest
 This module contains the function to the command line arguments
@@ -31,5 +29,4 @@ def ft_command_quest() -> None:
     print(f"Total arguments: {total_args}")
 
 
-if __name__ == "__main__":
-    ft_command_quest()
+ft_command_quest()
