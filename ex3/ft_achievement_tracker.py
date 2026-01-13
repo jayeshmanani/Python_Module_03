@@ -7,17 +7,44 @@ This Module contains the usage of sets
 
 
 class Player:
-    def __init__(self):
+    """
+    Player class to store the player name along with their achievements
+    """
+
+    def __init__(self) -> None:
+        """
+        Init func for starting the players dictionary
+        """
         self.players = dict()
 
-    def add_player(self, name):
+    def add_player(self, name: str) -> None:
+        """
+        Docstring for add_player
+
+        :param name: Name of the player
+        Returns Nothing
+
+        Initiate name stored in dict, and one can start
+        storing the achievements
+        """
         self.players[name] = set()
 
-    def add_achievement(self, name, ac):
+    def add_achievement(self, name: str, ac: str) -> None:
+        """
+        Docstring for add_achievement
+        Adding the achievement for the player
+        :param name: Name of the player
+        :type name: str
+        :param ac: Achievement needs to be added
+        :type ac: str
+        """
         self.players[name].add(ac)
 
 
 def ft_achievement_tracker() -> None:
+    """
+    Demonstrating the How and What can be done using the Set and Set ops
+    """
     print("=== Achievement Tracker System ===")
     print()
 
