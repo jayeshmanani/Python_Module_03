@@ -38,11 +38,40 @@ def ft_achievement_tracker() -> None:
 
     print("\n=== Achievement Analytics ===")
     union_ac = set()
-    for p in pl.players:
+    inter_ac = set()
+    diff_ac = set()
+    for enum, p in enumerate(pl.players):
         union_ac = union_ac.union(pl.players[p])
+        if enum == 0:
+            inter_ac = pl.players[p]
+        else:
+            inter_ac = inter_ac.intersection(pl.players[p])
+
+    player_vals = pl.players.values()
+    all_achs = set()
+    for s in list(player_vals):
+        all_achs = all_achs.union(s)
+
+    for i, p in enumerate(player_vals):
+        others_union = set()
+        for j, s in enumerate(player_vals):
+            if i == j:
+                continue
+            others_union = others_union.union(s)
+
+        only_p = p.difference(others_union)
+        diff_ac = diff_ac.union(only_p)
 
     print(f"All unique achievements: {union_ac}")
-    print(f"Total unique achievements: {len(union_ac)}")
+    print(f"Total unique achievements: {len(union_ac)}\n")
+
+    print(f"Common to all players: {inter_ac}")
+    print(f"Rare achievements (1 player): {diff_ac}\n")
+
+    print(f"Alice vs Bob common: "
+          f"{pl.players['alice'].intersection(pl.players['bob'])}")
+    print(f"Alice unique: {pl.players['alice'].difference(pl.players['bob'])}")
+    print(f"Bob unique: {pl.players['bob'].difference(pl.players['alice'])}")
 
 
 if __name__ == "__main__":
