@@ -65,7 +65,8 @@ def print_inventory(player: str, inventory: dict) -> None:
         total = item.get("quantity") * item.get("value")
         print(
             f"{name} ({item.get('category')}, {item.get('rarity')}): "
-            f"{item.get('quantity')}x @ {item.get('value')} gold each = {total} gold"
+            f"{item.get('quantity')}x @ {item.get('value')} gold each ="
+            f" {total} gold"
         )
 
     total_value = inventory_value(inventory)
