@@ -5,6 +5,9 @@ This Module contains the usage of generators
 
 
 def generate_event(event_id: int) -> dict:
+    """
+    Generate a deterministic game event based on the event_id.
+    """
     p_names = ['alice', 'bob', 'charlie', 'max', 'kia', 'lambo']
     activity = ["killed monster", "found treasure", "leveled down",
                 "leveled up", "died", "crafted item", "cracked gold",
@@ -27,6 +30,9 @@ def event_stream(n):
 
 
 def process_stream(events):
+    """
+    Process a stream of game events and gather statistics.
+    """
     total = 0
     high_level_players = 0
     treasure_events = 0
@@ -100,6 +106,9 @@ def primes(n: int):
 
 
 def ft_data_stream() -> None:
+    """
+    Demonstration of data stream processing using generators in Python
+    """
     N = 1000
     print("=== Game Data Stream Processor ===\n")
     print(f"Processing {N} game events...\n")
