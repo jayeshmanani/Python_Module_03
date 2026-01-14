@@ -7,14 +7,14 @@ using tuples.
 import math
 
 
-def create_position(x, y, z):
+def create_position(x: int, y: int, z: int) -> tuple[int, int, int]:
     """
     Create a 3D position as an immutable tuple.
     """
     return (x, y, z)
 
 
-def distance_3d(p1, p2):
+def distance_3d(p1: tuple[int, int, int], p2: tuple[int, int, int]) -> float:
     """
     Calculate the Euclidean distance between two 3D points.
     """

@@ -26,7 +26,7 @@ def ft_score_analytics() -> None:
             val = int(sys.argv[i])
             scores.append(val)
         except Exception:
-            pass
+            print(f"It seems: You typed it wrong: {sys.argv[i]}")
         i += 1
     total_players = len(scores)
     if total_players:

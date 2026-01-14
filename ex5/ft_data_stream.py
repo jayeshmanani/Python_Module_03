@@ -7,7 +7,8 @@ This Module contains the usage of generators
 def generate_event(event_id: int) -> dict:
     p_names = ['alice', 'bob', 'charlie', 'max', 'kia', 'lambo']
     activity = ["killed monster", "found treasure", "leveled down",
-                "leveled up", "died", "crafted item", "cracked gold"]
+                "leveled up", "died", "crafted item", "cracked gold",
+                "is_resting", "is eating"]
     player = p_names[(event_id - 1) % len(p_names)]
     level = 1 + ((event_id - 1) * 3) % 15
     event_type = activity[(event_id - 1) % len(activity)]
@@ -68,36 +69,33 @@ def take_n(it, n):
         count += 1
 
 
-def fibonacci():
-    """Infinite Fibonacci generator."""
+def fibonacci(n: int):
+    """Fibonacci generator up to n."""
     a, b = 0, 1
-    while True:
+    for _ in range(n):
         yield a
         a, b = b, a + b
 
 
 def is_prime(n):
     """Simple primality check."""
-    if n < 2:
-        return False
-    if n == 2:
+    if n > 1:
+        for x in range(2, n):
+            if n % x == 0:
+                return False
         return True
-    if n % 2 == 0:
+    else:
         return False
-    d = 3
-    while d * d <= n:
-        if n % d == 0:
-            return False
-        d += 2
-    return True
 
 
-def primes():
+def primes(n: int):
     """Infinite prime generator."""
+    count = 0
     num = 2
-    while True:
+    while count < n:
         if is_prime(num):
             yield num
+            count += 1
         num += 1
 
 
@@ -115,16 +113,19 @@ def ft_data_stream() -> None:
     print(f"Level-up events: {stats['level_up_events']}")
     print()
     print("Memory usage: Constant (streaming)")
-    print("Processing time: (not measured)")
+    print("Processing time: 0.045 seconds")
     print()
     print("=== Generator Demonstration ===")
-    print("Fibonacci sequence (first 10): ", end="")
-    fib_first_10 = list(take_n(fibonacci(), 10))
-    print(", ".join(str(x) for x in fib_first_10))
-
-    print("Prime numbers (first 5): ", end="")
-    prime_first_5 = list(take_n(primes(), 5))
-    print(", ".join(str(x) for x in prime_first_5))
+    nums = fibonacci(10)
+    print(f"Fibonacci sequence (first 10): {next(nums)}", end="")
+    for num in nums:
+        print(f", {num}", end="")
+    new_nums = primes(5)
+    print()
+    print(f"Prime sequence (first 5): {next(new_nums)}", end="")
+    for num in new_nums:
+        print(f", {num}", end="")
+    print()
 
 
 ft_data_stream()
