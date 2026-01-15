@@ -6,6 +6,9 @@ using list comprehensions, dict comprehensions, and set comprehensions
 
 
 def find_category(score):
+    """
+    Return the Category High, Low, Medium based on score
+    """
     if score >= 2100:
         return "high"
     elif score >= 1900:
@@ -19,7 +22,7 @@ def ft_analytics_dashboard() -> None:
             "name": "alice",
             "score": 2300,
             "active": True,
-            "achievements": 
+            "achievements":
                 [
                     "first_kill", "boss_slayer", "level_10",
                     "secret_room", "master_explorer"
@@ -30,7 +33,7 @@ def ft_analytics_dashboard() -> None:
             "name": "bob",
             "score": 1800,
             "active": True,
-            "achievements": 
+            "achievements":
                 [
                     "first_kill", "level_5", "side_quest"
                 ],
@@ -40,7 +43,7 @@ def ft_analytics_dashboard() -> None:
             "name": "charlie",
             "score": 2150,
             "active": True,
-            "achievements": 
+            "achievements":
                 [
                     "level_10", "boss_slayer", "secret_room", "boss_slayer"
                 ],
@@ -50,7 +53,7 @@ def ft_analytics_dashboard() -> None:
             "name": "diana",
             "score": 2050,
             "active": False,
-            "achievements": 
+            "achievements":
                 [
                     "first_kill", "level_3"
                 ],
@@ -61,11 +64,11 @@ def ft_analytics_dashboard() -> None:
     print("=== Game Analytics Dashboard ===")
     print()
     print("=== List Comprehension Examples ===")
-    
+
     high_scorers = [p["name"] for p in players if p["score"] > 2000]
     scores_doubled = [p["score"] * 2 for p in players]
     active_players = [p["name"] for p in players if p["active"]]
-    
+
     print("High scorers (>2000):", high_scorers)
     print("Scores doubled:", scores_doubled)
     print("Active players:", active_players)
