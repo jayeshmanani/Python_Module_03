@@ -103,7 +103,7 @@ def ft_analytics_dashboard() -> None:
     print("Unique players:", unique_players)
     print("Unique achievements:", unique_achievements)
     print("Active regions:", active_regions)
-
+    print()
     print("=== Combined Analysis ===")
 
     total_players = len(players)
