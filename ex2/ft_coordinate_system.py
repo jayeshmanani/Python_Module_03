@@ -5,6 +5,7 @@ using tuples.
 """
 
 import math
+import sys
 
 
 def create_position(x: int, y: int, z: int) -> tuple[int, int, int]:
@@ -68,6 +69,17 @@ def ft_coordinate_system() -> None:
         x, y, z = parsed
         print(f"Player at x={x}, y={y}, z={z}")
         print(f"Coordinates: X={x}, Y={y}, Z={z}")
+    print()
+    if len(sys.argv) == 2:
+        input_str = sys.argv[1]
+        print(f'Parsing input coordinates: "{input_str}"')
+        parsed = parse_coordinates(input_str)
+        print()
+        print("Unpacking demonstration:")
+        if parsed:
+            x, y, z = parsed
+            print(f"Player at x={x}, y={y}, z={z}")
+            print(f"Coordinates: X={x}, Y={y}, Z={z}")
 
 
 ft_coordinate_system()
